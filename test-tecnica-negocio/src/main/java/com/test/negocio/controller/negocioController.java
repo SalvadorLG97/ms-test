@@ -32,8 +32,8 @@ public class negocioController {
 	}
 	
 	@GetMapping("/{idUser}")
-	public ResponseEntity<ResponseEntity<Test>> obtenerTest(@PathVariable("idUser") int id){
-		ResponseEntity<Test> test = negocioServiceFeign.getUserById(id);
+	public ResponseEntity<Test> obtenerTest(@PathVariable("idUser") int id){
+		Test test = negocioServiceFeign.getUserById(id);
 		if(test == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -41,8 +41,8 @@ public class negocioController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<ResponseEntity<Test>> guardarTest(@RequestBody Test test){
-		ResponseEntity<Test> newTest = negocioServiceFeign.save(test);
+	public ResponseEntity<Test> guardarTest(@RequestBody Test test){
+		Test newTest = negocioServiceFeign.save(test);
 		return ResponseEntity.ok(newTest);
 	} 
 	
