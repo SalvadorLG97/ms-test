@@ -26,13 +26,13 @@ public class publicServiceFeign {
 		return publicRepository.getListTest();
 	}
 	
-	public ResponseEntity<Test> getUserById(int id) {
-		ResponseEntity<Test> test = publicRepository.obtenerTest(id);
+	public Test getUserById(int id) {
+		Test test = publicRepository.obtenerTest(id);
 		return test;
 	}
 	
-	public ResponseEntity<Test> save(Test test) {
-		ResponseEntity<Test> newUser = publicRepository.guardarTest(test);
+	public Test save(Test test) {
+		Test newUser = publicRepository.guardarTest(test);
 		return newUser;
 	}
 	

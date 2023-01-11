@@ -32,8 +32,8 @@ public class publicoController {
 	}
 	
 	@GetMapping("/{idUser}")
-	public ResponseEntity<ResponseEntity<Test>> obtenerTest(@PathVariable("idUser") int id){
-		ResponseEntity<Test> test = publicServiceFeign.getUserById(id);
+	public ResponseEntity<Test> obtenerTest(@PathVariable("idUser") int id){
+		Test test = publicServiceFeign.getUserById(id);
 		if(test == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -41,8 +41,8 @@ public class publicoController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<ResponseEntity<Test>> guardarTest(@RequestBody Test test){
-		ResponseEntity<Test> newTest = publicServiceFeign.save(test);
+	public ResponseEntity<Test> guardarTest(@RequestBody Test test){
+		Test newTest = publicServiceFeign.save(test);
 		return ResponseEntity.ok(newTest);
 	} 
 	

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.test.publico.models.Post;
 
-@FeignClient(name = "test-tecnica-marvel-neg",url = "negocio-app:8082/negocio")
+@FeignClient(name = "test-tecnica-marvel-neg",url = "http://localhost:8082/negocio")
 public interface postRepository {
 
 	@GetMapping("/marvel")

@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.test.publico.models.Test;
 
-@FeignClient(name = "test-tecnica-persistencia-neg", url = "negocio-app:8082/negocio")
+@FeignClient(name = "test-tecnica-persistencia-neg", url = "http://localhost:8082/negocio")
 public interface publicRepository{
 
 	@GetMapping
 	public List<Test> getListTest();
 	
 	@GetMapping("/{idUser}")
-	public ResponseEntity<Test> obtenerTest(@PathVariable("idUser") int id);
+	public Test obtenerTest(@PathVariable("idUser") int id);
 	
 	@PostMapping
-	public ResponseEntity<Test> guardarTest(@RequestBody Test test);
+	public Test guardarTest(@RequestBody Test test);
 	
 }
